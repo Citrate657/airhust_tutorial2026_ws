@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>drone_bringup</name>
+  <version>0.1.0</version>
+  <description>起飞与避障：新人筛选任务的工作包</description>
+
+  <maintainer email="drone-team@example.com">drone team</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>drone_backend</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>drone_backend</exec_depend>
+</package>
