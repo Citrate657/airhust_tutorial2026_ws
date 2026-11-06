@@ -37,7 +37,7 @@ python语言本身有的东西不多，绝大部分功能都是通过安装特�
 下面需要你们通过cd命令进入`src/lab_vision_sim_task3`目录，然后下载`requirement.txt`里面的包（你可以把pip包理解为python的模组，requirement.txt理解为一个整合包）
 
 ```bash
-cd ~/airhust_tutorial26_vision_lab/src/lab_vision_sim_task3
+cd ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_vision_lab/src/lab_vision_sim_task3
 pip install -r requirements.txt
 ```
 

@@ -2,7 +2,7 @@
 
 从 [第二关讲义：从 template 看懂无人机任务程序](第二关-template入门.md) 开始。
 
-- [template 下载包](template.zip)：解压后放入第一关工作空间的 src；已预装的学员可直接进入编译与运行部分。
+- 直接在本目录编译和运行，`src/template` 已包含完整教学包，无需解压或复制。
 - [template.cpp](src/template/src/template.cpp)：主流程与任务状态机。
 - [template.h](src/template/include/template.h)：回调、位置目标、计时、悬停与降落函数。
 

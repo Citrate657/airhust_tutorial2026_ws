@@ -21,7 +21,7 @@
 起第一关试试：
 
 ```bash
-cd ~/airhust_tutorial26_vision_lab
+cd ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_vision_lab
 catkin_make
 ```
 然后打开 `~/.zshrc`：
@@ -41,7 +41,7 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$HOME/PX4-Autopilot/Tools/sitl_gazebo
 第一行是 `simulation` 包的位置，下视相机的模型在那里；后两行是 PX4 的。把这个工作空间的 source 加到这三行**上面**：
 
 ```bash
-source ~/airhust_tutorial26_vision_lab/devel/setup.zsh
+source ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_vision_lab/devel/setup.zsh
 ```
 
 catkin 的 `setup.zsh` 会重写 `ROS_PACKAGE_PATH`，所以它必须在前面，不然上面那三行会被冲掉，`roslaunch` 会报 `Resource not found: px4`。
@@ -49,7 +49,7 @@ catkin 的 `setup.zsh` 会重写 `ROS_PACKAGE_PATH`，所以它必须在前面�
 然后他看起来就像是
 
 ```bash
-source ~/airhust_tutorial26_vision_lab/devel/setup.zsh
+source ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_vision_lab/devel/setup.zsh
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$HOME/airhust_ws/src
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$HOME/PX4-Autopilot
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$HOME/PX4-Autopilot/Tools/sitl_gazebo
