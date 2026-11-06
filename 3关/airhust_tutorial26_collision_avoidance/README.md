@@ -14,15 +14,13 @@
 
 ## 编译与启动
 
-在配置好 ROS 1 的飞机或仿真环境中，先准备 [CMakeLists.txt](src/mission/CMakeLists.txt) 和 [package.xml](src/mission/package.xml) 中声明的依赖，包括 MAVROS、`template`、`QR_node`、`yolov8_ros_msgs`、`cloud_recognition` 等。当前源码存在下文列出的运行前问题，需要先处理，再编译：
-
 ```bash
-cd ~/template2026_ws
+cd 3关/airhust_tutorial26_collision_avoidance
 catkin_make
-source devel/setup.bash
+source devel/setup.zsh
 ```
 
-先启动 MAVROS 和本地定位；`avoidance` 还需要点云话题 `/cloud_registered`（由 `cloud_register_mapping` 发布）。这些任务 launch 只启动任务节点，不启动飞控连接、定位或雷达处理。
+先启动 MAVROS 和本地定位(sim.launch)；`avoidance` 还需要点云话题 `/cloud_registered`（由 `cloud_register_mapping` 发布）。这些任务 launch 只启动任务节点，不启动飞控连接、定位或雷达处理。
 
 每次选择一个任务运行：
 
@@ -132,11 +130,3 @@ waypoints:
 | `/mavros/setpoint_raw/local` | 发布 `mavros_msgs/PositionTarget` |
 | `mavros/set_mode` | 请求 OFFBOARD 模式 |
 | `mavros/cmd/arming` | 请求解锁 |
-
-## 当前运行前问题与验证范围
-
-- `hover.launch` 当前节点 `name` 为空，且 YAML 放在节点内部加载到私有命名空间；源码使用普通 `NodeHandle` 读取公共参数。需要设置有效节点名，并将 YAML 加载范围与源码一致。square 和 avoidance 的 launch 已采用公共参数加载。
-- `avoidance.cpp` 当前缺少 `mission_num`、`if_debug`、`err_max` 的定义；`case 2` 中局部变量 `abs_distance` 的初始化还需要用独立作用域包住，避免后续 `case` 标签跨越初始化。这些问题会影响编译。
-- 公共 `precision_land()` 保持进入降落时的 XY，设置本地 Z 目标为 `-0.15`，约 5 秒后返回完成；它没有依据落地状态确认着陆，也没有主动发送上锁请求。
-
-本文按当前源码和配置编写。已对 square 的参数对应关系及 square、avoidance 的 launch/YAML 做静态检查；尚未进行 ROS 编译、仿真或实机飞行验证。

@@ -32,8 +32,6 @@ find_package(catkin REQUIRED COMPONENTS
   pcl_ros
   pcl_conversions
   template
-  yolov8_ros_msgs
-  cloud_recognition
 )
 
 catkin_package(

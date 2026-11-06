@@ -41,12 +41,8 @@ airhust_tutorial26_pcl_ws/
 ```shell
 cd ~/airhust_tutorial26_pcl_ws
 catkin_make --pkg tutorial_pcl_basic
-
-source devel/setup.bash     # bash 用这个
-source devel/setup.zsh      # zsh 用这个（两个都 source 会重复加路径）
+source devel/setup.zsh
 ```
-
-这行每次开终端都需要运行一次，如果加进 `~/.bashrc` / `~/.zshrc` 就可以不用了。但是这样做会在工作空间变多时污染环境变量，因此不建议这样做。正确的省事做法是放进运行的shell脚本。
 
 ### 怎么跑
 

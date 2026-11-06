@@ -4,12 +4,6 @@
 
 **环境**：Ubuntu 20.04 + ROS Noetic + PX4 SITL + Gazebo（镜像已装好）；仓库放在 `~/airhust_tutorial26_vision_lab`，它本身就是 catkin 工作空间。
 
-**克隆命令**
-```bash
-cd
-git clone https://github.com/dunantedage1/airhust_tutorial26_vision_lab.git
-```
-
 **板块三（离线，五个完形填空）**
 
 ```bash
