@@ -55,7 +55,7 @@ void cluster(const Cloud::ConstPtr& cloud, std::vector<pcl::PointIndices>& clust
 2. 先启动 `roscore`，用包里的假发布者验证链路：
    ```shell
    # 新终端先加载本工作空间环境。
-   source ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_pcl_ws/devel/setup.bash
+   source ~/airhust_tutorial26_pcl_ws/devel/setup.bash
    rosrun tutorial_pcl_basic publish_demo.py
    ```
    假发布者只支持 `x/y/z/intensity` 四个 float32 字段的未压缩 binary PCD，默认房间数据符合这个格式；其他格式会明确报错。

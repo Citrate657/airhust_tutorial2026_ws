@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # 起后端：roscore（没起就顺手起）+ sensor_node + drone_sim_node。
 #
 #   ./run_sim.sh
@@ -7,9 +7,6 @@
 
 set -o pipefail
 
-WS="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# shellcheck disable=SC1091
-source "$WS/setup.sh"
 
 export ROS_MASTER_URI="${ROS_MASTER_URI:-http://127.0.0.1:11311}"
 

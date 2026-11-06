@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # 练习启动脚本。学生只需要记住这个。
 #
 #   ./run                打印用法
@@ -53,12 +53,10 @@ esac
 if "$solution"; then
   bin="solution_$bin"
 fi
-if [ ! -f devel/setup.bash ]; then
+if [ ! -d devel/lib/tutorial_pcl_basic ]; then
   echo "请先执行 catkin_make --pkg tutorial_pcl_basic" >&2
   exit 1
 fi
-# shellcheck disable=SC1091
-source devel/setup.bash
 if [ ! -x "devel/lib/tutorial_pcl_basic/$bin" ]; then
   echo "找不到程序 $bin，请重新编译。参考答案需加 -DTUTORIAL_BUILD_SOLUTIONS=ON" >&2
   exit 1

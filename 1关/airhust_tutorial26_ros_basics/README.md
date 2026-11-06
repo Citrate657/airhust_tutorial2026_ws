@@ -17,16 +17,6 @@
 
 ## 1. 快速上手
 
-克隆总仓库后，在 Bash 终端进入本任务并加载环境：
-
-```bash
-cd ~/airhust_tutorial2026_ws/1关/tutor_26_misson1
-source ./setup.sh
-```
-
-新开的终端也需执行以上两步。完成题目要求的编译后，再执行一次 `source ./setup.sh`。
-
-
 | 路径 | 属性 |
 |---|---|
 | `src/drone_bringup/` | 被狗啃的地方，需要你来修理修理 |

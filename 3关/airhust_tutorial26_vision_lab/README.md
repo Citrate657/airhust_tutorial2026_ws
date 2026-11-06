@@ -2,17 +2,18 @@
 
 2026 级梯队培训 · 视觉方向（板块三 视觉基础、板块四 仿真单元测试）
 
-**环境**：Ubuntu 20.04 + ROS Noetic + PX4 SITL + Gazebo（镜像已装好）；仓库放在 `~/airhust_tutorial2026_ws/3关/airhust_tutorial26_vision_lab`，它本身就是 catkin 工作空间。
+**环境**：Ubuntu 20.04 + ROS Noetic + PX4 SITL + Gazebo（镜像已装好）；仓库放在 `~/airhust_tutorial26_vision_lab`，它本身就是 catkin 工作空间。
 
-**进入工作空间（已包含在总仓库中，不必再次克隆）**
+**克隆命令**
 ```bash
-cd ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_vision_lab
+cd
+git clone https://github.com/dunantedage1/airhust_tutorial26_vision_lab.git
 ```
 
 **板块三（离线，五个完形填空）**
 
 ```bash
-cd ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_vision_lab/src/lab_vision_sim_task3
+cd ~/airhust_tutorial26_vision_lab/src/lab_vision_sim_task3
 pip install -r requirements.txt
 python scripts/01_color_detect.py     # 01~05 依次做
 ```
@@ -22,7 +23,7 @@ python scripts/01_color_detect.py     # 01~05 依次做
 **板块四（仿真，五关）**
 
 ```bash
-cd ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_vision_lab
+cd ~/airhust_tutorial26_vision_lab
 catkin_make
 roslaunch lab_vision_sim_task4 task1.launch   # task1~task5
 ```

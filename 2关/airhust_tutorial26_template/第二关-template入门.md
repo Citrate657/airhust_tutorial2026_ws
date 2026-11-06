@@ -16,28 +16,32 @@
 
 ## 一、先运行一次，看看我们将要读的程序
 
-### 1. 进入第二关工作空间
+### 1. 准备 template
 
-总仓库已经包含 template 包。克隆后直接进入第二关，不需要另外下载或复制包：
+如果需要自己下载，先下载 [template.zip](template.zip)，解压后把 template 文件夹放入**第一关工作空间的 src 目录**。放好后，应能在下面的位置找到文件：
 
 ```text
-2关/
-└── src/template/
-    ├── package.xml
-    ├── CMakeLists.txt
-    ├── src/template.cpp
-    ├── include/template.h
-    ├── config/template.yaml
-    └── launch/template.launch
+第一关工作空间/
+└── src/
+    └── template/
+        ├── package.xml
+        ├── CMakeLists.txt
+        ├── src/template.cpp
+        ├── include/template.h
+        ├── config/template.yaml
+        └── launch/template.launch
 ```
+
+注意，package.xml 就在 template 文件夹里面，中间没有再多套一层 template。
+
+如果已经放好了包，直接检查这个位置即可，不需要再次下载或放入另一份同名包。下面的编译和运行步骤，两种情况都适用。
 
 ### 2. 编译并加载环境
 
-在镜像环境中打开终端，执行：
+打开第一关使用的终端，进入第一关工作空间。以下用 ~/first_level_ws 举例，**请把它换成自己第一关的实际路径**：
 
 ```bash
-source /opt/ros/noetic/setup.bash
-cd ~/airhust_tutorial2026_ws/2关
+cd ~/first_level_ws
 catkin_make
 ```
 

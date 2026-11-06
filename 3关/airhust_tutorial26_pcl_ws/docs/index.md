@@ -39,7 +39,7 @@ airhust_tutorial26_pcl_ws/
 ### 怎么编译
 
 ```shell
-cd ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_pcl_ws
+cd ~/airhust_tutorial26_pcl_ws
 catkin_make --pkg tutorial_pcl_basic
 
 source devel/setup.bash     # bash 用这个

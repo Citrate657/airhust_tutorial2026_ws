@@ -17,7 +17,7 @@
 在配置好 ROS 1 的飞机或仿真环境中，先准备 [CMakeLists.txt](src/mission/CMakeLists.txt) 和 [package.xml](src/mission/package.xml) 中声明的依赖，包括 MAVROS、`template`、`QR_node`、`yolov8_ros_msgs`、`cloud_recognition` 等。当前源码存在下文列出的运行前问题，需要先处理，再编译：
 
 ```bash
-cd ~/airhust_tutorial2026_ws/3关/airhust_tutorial26_collision_avoidance
+cd ~/template2026_ws
 catkin_make
 source devel/setup.bash
 ```

@@ -46,32 +46,44 @@
 
 在镜像环境的 Linux 终端中克隆一次总仓库：
 
-```bash
+```zsh
 cd ~
 git clone https://github.com/HarryGit-HUST/airhust_tutorial2026_ws.git
 cd ~/airhust_tutorial2026_ws
-source /opt/ros/noetic/setup.bash
 ```
 
 各任务已经保留独立工作空间结构。直接进入下表对应的目录编译、运行和修改代码，不需要再复制目录，也不要把总仓库放进其他工作空间的 `src`。
 
 | 任务 | 工作空间（以下路径相对总仓库根目录） | 题目与讲义 |
 | --- | --- | --- |
-| 第一关 | `1关/tutor_26_misson1` | [基础通信任务](1关/tutor_26_misson1/README.md) |
-| 第二关 | `2关` | [template 入门](2关/第二关-template入门.md)、[练习与绕圈任务](2关/第二关-练习与绕圈任务.md) |
+| 第一关 | `1关/airhust_tutorial26_ros_basics` | [基础通信任务](1关/airhust_tutorial26_ros_basics/README.md) |
+| 第二关 | `2关/airhust_tutorial26_template` | [template 入门](2关/airhust_tutorial26_template/第二关-template入门.md)、[练习与绕圈任务](2关/airhust_tutorial26_template/第二关-练习与绕圈任务.md) |
 | 点云方向 | `3关/airhust_tutorial26_pcl_ws` | [PCL 讲义](3关/airhust_tutorial26_pcl_ws/docs/index.md) |
 | 视觉方向 | `3关/airhust_tutorial26_vision_lab` | [第三关](<3关/airhust_tutorial26_vision_lab/src/板块3 函数原型与静态调用/README.md>)、[第四关](<3关/airhust_tutorial26_vision_lab/src/板块4 仿真单元测试/README.md>) |
 | 避障方向 | `3关/airhust_tutorial26_collision_avoidance` | [算法补全与仿真任务](3关/airhust_tutorial26_collision_avoidance/collision_avoidance.md) |
 
-例如进入第二关：
+镜像已经配置好环境，终端统一使用 zsh，直接进入对应工作空间操作。
 
-```bash
-cd ~/airhust_tutorial2026_ws/2关
+第一关：
+
+```zsh
+cd ~/airhust_tutorial2026_ws/1关/airhust_tutorial26_ros_basics
 catkin_make
-source devel/setup.bash
+roslaunch drone_bringup mission.launch
 ```
 
-第一关进入 `1关/tutor_26_misson1` 后先执行 `source ./setup.sh`，让预编译后端可被找到。其他任务的编译和启动按对应讲义进行；题目中要求补全的代码仍需自己完成。
+先按题目修复编译与通信问题，再运行任务。
+
+第二关：
+
+```zsh
+cd ~/airhust_tutorial2026_ws/2关/airhust_tutorial26_template
+catkin_make
+rosparam load src/template/config/template.yaml
+rosrun template template
+```
+
+运行第二关任务前，按镜像中的方式启动仿真、飞控与 MAVROS。修改 C++ 后重新编译。运行说明以这里为准，收录的原讲义保持原文。
 
 第三、第四关共用对应方向的工作空间，第四关直接继续运行该方向的仿真任务，不再复制一份。各工作空间分别编译，不在总仓库根目录执行 `catkin_make`。
 
